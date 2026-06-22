@@ -58,7 +58,7 @@ body {
     color: #182230;
     background: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(24, 34, 48, 0.08);
-    padding: 10px 16px;
+    padding: 10px 16px 14px;
     border-radius: 999px;
     transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -73,13 +73,24 @@ body {
 .nav-link:focus-visible::after {
     content: "";
     position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 6px;
+    left: 14px;
+    right: 14px;
+    bottom: 7px;
     height: 2px;
     border-radius: 999px;
     background: currentColor;
     opacity: 0.9;
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+.nav-link::after {
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
 }
 
 .hero {

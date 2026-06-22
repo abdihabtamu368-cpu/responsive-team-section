@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkHref = link.getAttribute('href') || '';
         const isCurrentPage = linkHref === currentFile || (currentFile === 'index.html' && linkHref === './');
         link.classList.toggle('active', isCurrentPage);
+        if (isCurrentPage) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
     });
 
     if (statusText) {
