@@ -70,6 +70,21 @@ body {
     color: #435166;
 }
 
+.primary-button {
+    margin-top: 18px;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    background: #182230;
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.primary-button.is-active {
+    background: #0f6aa1;
+}
+
 .team-section {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -95,6 +110,20 @@ body {
     margin: 0;
     line-height: 1.6;
     color: #56657a;
+}
+
+.site-footer {
+    max-width: 1100px;
+    margin: 28px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(24, 34, 48, 0.08);
+    color: #56657a;
+}
+
+.card.is-highlighted {
+    border-color: rgba(15, 106, 161, 0.45);
+    box-shadow: 0 18px 42px rgba(15, 106, 161, 0.14);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 900px) {
