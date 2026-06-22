@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.endsWith('/') ? 'index.html' : currentPath.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
     const statusText = document.getElementById('page-status');
 
     navLinks.forEach((link) => {
-        const isCurrentPage = link.getAttribute('href') === currentFile;
+        const linkHref = link.getAttribute('href') || '';
+        const isCurrentPage = linkHref === currentFile || (currentFile === 'index.html' && linkHref === './');
         link.classList.toggle('active', isCurrentPage);
     });
 
